@@ -1,0 +1,261 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+ul,ol,dl{
+    list-style: none;
+}
+
+
+
+#warp{
+    width: 1200px;
+    margin: auto;
+    position: relative;
+}
+#header{
+    height: 100px;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header img{
+    margin-left: 30px;
+}
+#header nav{
+    text-align: center;
+}
+#header nav:hover .depth02{
+    height: 120px;
+}
+.depth01{
+    display: flex;
+}
+.depth01 > li{
+    position: relative;
+}
+.depth01 > li > a{
+    display: block;
+    color: #000;
+    padding: 0 50px;
+    line-height: 100px;
+    font-weight: bold;
+    color: #fff;
+}
+.depth02 li:hover a{
+    background-color: #000;
+    color: #fff;
+}
+.depth02{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    background-color: #fff;
+    transition: all 0.6s ease-in-out;
+}
+.depth02 li a{
+    display: block;
+    color: #000;
+    line-height: 40px;
+}
+
+
+
+#slide{
+    height: 300px;
+    background: url('../img/best01.gif') no-repeat center / cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#slide p{
+    padding: 10px;
+    background-color: rgba(255,255,255, 0.5);
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 50px;
+}
+
+
+
+#content{
+    height: 200px;
+    display: flex;
+}
+#content .con{
+    width: 400px;
+    text-align: center;
+}
+.con h2 a{
+    display: block;
+    color: #fff;
+    line-height: 40px;
+}
+.img1{
+    background: linear-gradient(45deg, transparent, #000), url('../img/best24.jpg'), no-repeat center;
+    background-size: cover;
+}
+.img2{
+    background: linear-gradient(45deg, transparent, #000), url('../img/best29.jpg') no-repeat center;
+    background-size: cover;
+}
+.img3{
+    background: url('../img/best19.jpg') no-repeat center / cover;
+}
+.img4{
+    background: url('../img/best34.jpg') no-repeat center / cover;
+}
+.tab{
+    display: flex;
+    position: relative;
+}
+.tab > li{
+    width: 20%;
+}
+.tab > li input{
+    display: none;
+}
+.tab > li label{
+    display: block;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    line-height: 2;
+    position: relative;
+    z-index: 99;
+    font-weight: bold;
+}
+.tab .ab-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+}
+.tab > li input:checked ~ .ab-box{
+    z-index: 80;
+}
+.tab > li input:checked + label{
+    background-color: #333;
+    color: #fff;
+}
+#table-box{
+    margin: 50px 10px;
+}
+.no-box{
+    display: flex;
+    justify-content: space-between;
+}
+.no-box a{
+    display: block;
+    color: #fff;
+    line-height: 30px;
+    font-weight: bold;
+}
+.no-box li:first-child a{
+    width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.img2{
+}
+.gallery-box{
+    display: flex;
+    justify-content: space-around;
+    margin-top: calc(30% - 47px);
+}
+
+
+
+.img3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img3 a{
+    display: block;
+    color: #000;
+    background-color: rgba(255,255,255, 0.5);
+    line-height: 50px;
+    width: 100px;
+    font-weight: bold;
+}
+.img4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.img4 a{
+    display: block;
+    color: #000;
+    background-color: rgba(255,255,255, 0.5);
+    line-height: 50px;
+    width: 100px;
+    font-weight: bold;
+}
+
+
+
+#footer{
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#f-logo a{
+    display: block;
+    color: #333;
+    margin-left: 30px;
+    width: 100px;
+}
+#copyright{
+    display: block;
+    color: #333;
+    line-height: 100px;
+}
+#sns ul{
+    display: flex;
+    margin: 0 30px;
+}
+#sns ul li a{
+    display: block;
+    padding: 0 10px;
+}
+#sns ul li img{
+    display: block;
+    border-radius: 50%;
+}
+
+
+
+#popup-box{
+    width: 300px;
+    height: 398px;
+    background-color: #ccc;
+    position: absolute;
+    top: 20%;
+    left: 450px;
+}
+#popup-box img{
+    width: 92%;
+    display: block;
+    margin: auto;
+}
+#popup-box button{
+    display: block;
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    padding: 2px;
+    margin-left: auto;
+}
