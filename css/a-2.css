@@ -10,3 +10,255 @@ ol,ul,dl{
 a{
     text-decoration: none;
 }
+
+
+
+#main{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+
+
+#header{
+    height: 100px;
+    background-color: #008000;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#logo{
+    margin-left: 30px;
+}
+#logo a{}
+#logo a img{
+    display: block;
+}
+
+
+
+#nav{
+    width: 60%;
+    text-align: center;
+}
+.depth01{
+    display: flex;
+}
+.depth01 > li{
+    width: 25%;
+    position: relative;
+}
+.depth01 > li > a{
+    display: block;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0 30px 0;
+    line-height: 100px;
+}
+.depth02{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: #008000;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    z-index: 2;
+}
+.depth02 li{}
+.depth02 li a{
+    display: block;
+    color: #fff;
+    font-size: 1em;
+    line-height: 40px;
+}
+.depth01:hover .depth02{
+    height: 120px;
+}
+#menu-cover{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    background-color: #008000;
+    z-index: 1;
+    transition: all 0.6s ease-in-out;
+    height: 0;
+    overflow: hidden;
+}
+#nav:hover + #menu-cover{
+    height: 140px;
+}
+.depth01 > li:hover > a,
+.depth02 li:hover a{
+    color: #333;
+}
+
+
+
+#mainBanner{
+    height: 300px;
+    background: url('../img/best26.jpg') no-repeat left 30% / cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+#mainBanner a{
+    display: block;
+    width: 260px;
+    background-color: rgb(0, 128, 0, 0.5);
+    line-height: 50px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 120px;
+}
+
+
+
+#content{
+    height: 200px;
+}
+.container{
+    display: flex;
+}
+.container > li{
+    width: 33.33%;
+}
+.c-1 h4 a{
+    display: block;
+    width: 100px;
+    background-color: #333;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+    font-weight: bold;
+}
+.c-1 > dl{
+    display: flex;
+    justify-content: space-around;
+    line-height: calc((200px - 42px) / 4);
+    color: #333;
+    border-top: solid 1px #333;
+    background-color: rgb(0, 128, 0, 0.5);
+}
+.c-1 > dl dt a{
+    display: block;
+    color: #333;
+}
+.c-1 > dl:hover{
+    background-color: #ccc;
+    font-weight: bold;
+}
+.gallery{
+    background-color: #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: calc(100% - 40px);
+}
+.gallery > li > a{
+    display: block;
+}
+.gallery > li > a img{
+    display: block;
+}
+
+.c-2 h4 a{
+    display: block;
+    width: 100px;
+    background-color: #333;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+    font-weight: bold;
+}
+.c-3{
+    background: url('../img/best36.jpg') no-repeat left 40% / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.c-3 a{
+    display: block;
+    width: 120px;
+    background-color: rgb(0, 128, 0, 0.5);
+    color: #fff;
+    line-height: 40px;
+    padding: 0 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+#footer{
+    height: 100px;
+    background-color: #808080;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.f-logo{
+    margin-left: 30px;
+}
+.copyright{}
+.copyright p{
+    font-weight: bold;
+}
+.family{}
+.family-box{
+    display: flex;
+    gap: 30px;
+    margin-right: 30px;
+}
+.family-box li{}
+.family-box li a{}
+.family-box li a img{
+    display: block;
+    border-radius: 50%;
+}
+
+
+
+#popup{
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    border: solid 1px #333;
+    box-sizing: border-box;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    display: none;
+}
+.popup-box{
+    display: flex;
+    flex-direction: column;
+    gap: 110px;
+}
+.popup-box h4{
+    width: 140px;
+    margin-left: 30px;
+    justify-content: flex-start;
+    flex: 1;
+}
+.popup-box p{
+    text-align: center;
+    flex: 8;
+    margin: 0 30px 0;
+}
+.popup-box button{
+    width: 50px;
+    margin-left: auto;
+    margin-right: 10px;
+    flex: 1;
+}
+.show
+{
+    display: block !important;
+}
