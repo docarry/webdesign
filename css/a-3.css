@@ -1,0 +1,352 @@
+@charset "UTF-8";
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+ul, ol, dl{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+
+
+#main{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 헤더 & 네비*/
+
+#header{
+    background-color: #fff;
+    border: solid 2px #197af1;
+    height: 100px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header h1 a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    margin-left: 30px;
+}
+#header h1 a img{
+    display: block;
+}
+
+#header nav{
+    width: 60%;
+    text-align: center;
+}
+.depth01{
+    display: flex;
+    justify-content: space-around;
+}
+.depth01 > li{
+    width: 25%;
+    position: relative;
+}
+.depth01 > li > a{
+    display: block;
+    line-height: 60px;
+}
+.depth01 > li > a::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    margin: 0 auto;
+    background-color: #197af1;
+    transition: all 0.6s ease-in-out;
+}
+
+.depth02{
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+}
+.depth02 li a{
+    display: block;
+    line-height: 50px;
+}
+.depth02 li a::after{
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    margin: 0 auto;
+    background-color: #197af1;
+    transition: all 0.6s ease-in-out;
+}
+.depth01 > li:hover > a::after,
+.depth02 li:hover a::after{
+    width: 120px;
+}
+.depth01 > li:hover > a,
+.depth02 li:hover a{
+    color: #197af1;
+    font-weight: bold;
+}
+.depth01 > li:hover .depth02{
+    height: 166px;
+}
+
+
+/* 이미지 슬라이드 */
+
+#main-banner{
+    height: 300px;
+    width: 1200px;
+    background: url('../images/a-3/mainbanner5.gif') no-repeat left 20% / cover;
+    display: flex;
+    align-items: center;
+}
+#main-banner a{
+    display: block;
+    line-height: 50px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    font-weight: bold;
+    margin-left: 70px;
+    transition: all 0.6s ease-in-out;
+}
+#main-banner a:hover{
+    color: #fff;
+    font-size: 18px;
+    background-color: rgba(25, 122, 241, 0.6);
+}
+
+
+/* 컨텐츠 */
+
+.contents-list{
+    display: flex;
+}
+.contents-list > li{
+    width: 33.333%;
+}
+.tab-box{
+    display: flex;
+    position: relative;
+    background-color: #c8f0f0;
+}
+.tab-box li input{
+    display: none;
+}
+.tab-box li label{
+    display: block;
+    line-height: 50px;
+    padding: 0 30px;
+}
+.ab-box{
+    height: 150px;
+    background: url('../images/a-3/bws-cover.jpeg') no-repeat center / cover, rgba(255, 255, 255, 0.2);
+    background-blend-mode: overlay;
+    box-sizing: border-box;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+.ab-box dl{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    transition: all 0.6s ease-in-out;
+}
+.ab-box dl:hover{
+    background-color: rgba(255, 255, 255, 0.6);
+}
+.notice .ab-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22px;
+}
+
+.bws-gallery{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+.bws-gallery li a{
+    display: block;
+    height: 90px;
+    width: 90px;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+}
+.bws-gallery li:hover a{
+    box-shadow: 4px 4px 4px rgba(255, 255, 255, 0.6);
+}
+.bws-gallery li a img{
+    display: block;
+    width: 100%;
+    transform: scale(1);
+    transition: all 0.6s ease-in-out;
+}
+.bws-gallery li a img:hover{
+    transform: scale(1.2);
+}
+.gallery .ab-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-box li input:checked ~ .ab-box{
+    z-index: 99;
+}
+.tab-box li input:checked + label{
+    font-weight: bold;
+    background-color: #6fdcda;
+}
+
+.sub-banner{
+    height: 200px;
+    background: url('../images/a-3/sub-banner01.jpg') no-repeat center / cover, rgba(255, 255, 255, 0.2);
+    background-blend-mode: overlay;
+}
+.shortcut{
+    height: 200px;
+    background: url('../images/a-3/bws-shortcut.jpeg') no-repeat center / cover, rgba(255, 255, 255, 0.2);
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shortcut button{
+    width: 200px;
+    line-height: 50px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 0;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.6s ease-in-out;
+}
+.shortcut button:hover{
+    color: #fff;
+    font-size: 18px;
+    background-color: rgba(25, 122, 241, 0.6);
+}
+
+
+/* 푸터 */
+
+#footer{
+    height: 100px;
+    display: flex;
+    background-color: #197af1;
+    text-align: center;
+}
+#footer h3 a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    margin: 0 30px;
+}
+#footer h3 a img{
+    display: block;
+}
+.footer-list{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.footer-list > li{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sns-list{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.sns-list li a{
+    display: block;
+    height: 36px;
+    width: 36px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.sns-list li a:hover{
+    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.6);
+}
+.sns-list li a img{
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: all 0.3s ease-in-out;
+}
+.sns-list li a:hover img{
+    transform: scale(1.2);
+}
+
+
+/* 팝업 */
+
+#popup{
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 6px 6px 6px rgba(255, 255, 255, 0.6);
+    position: fixed;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    z-index: 999;
+    display: none;
+}
+#popup h3{
+    color: #197af1;
+    padding: 20px 0px;
+    border-bottom: solid 1px #197af1;
+}
+#popup p{
+    padding: 30px 0px;
+}
+.close-btn{
+    font-size: 16px;
+    width: 80px;
+    line-height: 30px;
+    border: 0;
+    background-color: #c8f0f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.close-btn:hover{
+    background-color: #197af1;
+    color: #fff;
+}
+.show{
+    display: block !important;
+}
