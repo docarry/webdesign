@@ -1,0 +1,477 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol,dl{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+
+#wrap{
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+#wrap .top{
+    display: flex;
+}
+
+/* 어사이드 & 네비 스팟메뉴 시작 */
+#sideBar{
+    width: 200px;
+    height: calc(100vh - 120px);
+    background-color: #c54f43;
+}
+#sideBar{}
+#sideBar h1{}
+#sideBar h1 a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+#sideBar h1 a img{
+    display: block;
+}
+
+#sideBar nav{
+    margin: 0 20px;
+}
+#sideBar .depth01{
+    display: flex;
+    flex-direction: column;
+}
+#sideBar .depth01 > li{}
+#sideBar .depth01 > li > a{
+    display: block;
+    line-height: 50px;
+    transition: all 0.6s ease-in-out;
+}
+#sideBar .depth01 > li:hover .depth02{
+    height: 160px;
+}
+#sideBar .depth01 > li:last-child:hover .depth02{
+    height: 120px;
+}
+
+#sideBar .depth01 > li:hover > a{
+    color: #fff;
+    text-decoration: underline;
+}
+
+#sideBar .depth02{
+    height : 0px;
+    overflow: hidden;
+    transition: all 1s ease-in-out;
+}
+#sideBar .depth02 li{}
+#sideBar .depth02 li a{
+    display: block;
+    line-height: 40px;
+    transition: all 0.6s ease-in-out;
+}
+#sideBar .depth02 li:hover a{
+    color: #fff;
+    margin-left: 10px;
+}
+#sideBar .spot{
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+#sideBar .spot li{}
+#sideBar .spot li a{
+    display: block;
+    line-height: 50px;
+    transition: all 0.6s ease-in-out;
+    font-weight: bold;
+}
+#sideBar .spot li:hover a{
+    color: #fff;
+    text-decoration: underline;
+}
+#sideBar .spot li:first-child a::after{
+    content: '';
+    display: inline-block;
+    height: 14px;
+    margin: 0 10px;
+    border-left: solid 1px #581a15;
+}
+/* 어사이드 & 네비 & 스팟메뉴 끝 */
+
+
+/* 컨텐츠 시작 */
+#main{
+    display: flex;
+    width: 100%;
+}
+#main article:first-child{
+    height: 20%;
+}
+#main article:nth-child(2){
+    height: 30%;
+}
+#main article:nth-child(3){
+    height: 30%;
+}
+#main article:last-child{
+    height: 20%;
+}
+#main .leftContent{
+    width: 400px;
+    height: calc(100vh - 120px);
+}
+
+/* 배너 */
+#main .banner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f0b9af;
+}
+#main .banner a{
+    display: block;
+}
+#main .banner a img{
+    display: block;
+}
+#main .banner div{
+}
+#main .banner div h2 a{
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    color: #333;
+}
+#main .banner div p a{
+    color: #333;
+}
+#main .bannerBtn{
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-top: solid 2px #333;
+    border-right: solid 2px #333;
+    transform: rotate(45deg);
+    margin-right: 10px;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+#main .bannerBtn:hover{
+    border-top: solid 2px #c54f43;
+    border-right: solid 2px #c54f43;
+}
+
+/* 공지사항 */
+#main .notice{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 36px;
+    background-color: #f9dcd6;
+}
+#main .notice h2{}
+#main .notice h2 a{
+    font-size: 16px;
+    display: block;
+    width: 80px;
+    text-align: center;
+    background-color: #c54f43;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.6s ease-in-out;
+}
+#main .notice h2:hover a{
+    color: #fff;
+}
+#main .notice div{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 36px);
+    justify-content: center;
+}
+#main .notice div > dl{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: solid 1px #581a15;
+}
+#main .notice div > dl:last-child{
+    border-bottom: 0;
+}
+#main .notice div > dl dt,
+#main .notice div > dl dd{}
+#main .notice div > dl dt a,
+#main .notice div > dl dd a{
+    display: block;
+    transition: all .6s ease-in-out;
+}
+#main .notice div > dl:hover a{
+    color: #c54f43;
+}
+
+/* 갤러리 */
+#main .gallery{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    line-height: 36px;
+    background-color: #f0b9af;
+}
+#main .gallery h2{}
+#main .gallery h2 a{
+    font-size: 16px;
+    display: block;
+    width: 80px;
+    text-align: center;
+    background-color: #c54f43;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: all 0.6s ease-in-out;
+}
+#main .gallery h2:hover a{
+    color: #fff;
+}
+#main .gallery ul{
+    background-color: #d67365;
+    display: flex;
+    height: calc(100% - 36px);
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+#main .gallery ul li{}
+#main .gallery ul li > a{
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    height: 120px;
+}
+#main .gallery ul li span{
+    display: block;
+}
+#main .gallery ul li span a{
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+}
+#main .gallery ul li a img{
+    display: block;
+    width: 100%;
+    height: 120px;
+    transform: scale(1);
+    transition: all 0.6s ease-in-out;
+}
+#main .gallery ul li a:hover img{
+    transform: scale(1.2);
+}
+
+/* 바로가기 */
+#main .direct{
+    background: url('../images/e-1/direct.jpg') rgba(178, 34, 34, 0.2) no-repeat center / cover;
+    background-blend-mode: overlay;
+    text-align: center;
+}
+#main .direct ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 24px;
+}
+#main .direct ul li > a{
+    width: 70px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.6s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+#main .direct ul li:hover > a{
+    background-color: rgba(178, 34, 34, 0.6);
+}
+#main .xi-home-o.xi-3x::before,
+#main .xi-heart-o.xi-3x::before,
+#main .xi-cart-o.xi-3x::before,
+#main .xi-message-o.xi-3x::before{
+    transition: all 0.3s ease-in-out;
+    color: #581a15;
+}
+#main li:hover .xi-home-o.xi-3x::before{
+    content: "\e900";
+    color: #fff;
+}
+#main li:hover .xi-heart-o.xi-3x::before{
+    content: "\ea10";
+    color: #fff;
+}
+#main li:hover .xi-cart-o.xi-3x::before{
+    content: "\eb6f";
+    color: #fff;
+}
+#main li:hover .xi-message-o.xi-3x::before{
+    content: "\ea14";
+    color: #fff;
+}
+#main .direct ul li span a{
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+#main .direct ul li:hover span a{
+    color: #fff;
+}
+
+/* 슬라이드이미지 */
+#main .rightImgContent{
+    width: calc(100% - 600px);
+    height: calc(100vh - 120px);
+}
+#main .mainBanner{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#main .mainBanner ul{
+    width: 300%;
+    height: 100%;
+    display: flex;
+}
+#main .mainBanner ul li{
+    width: calc(100% / 3);
+    height: 100%;
+}
+#main .mainBanner ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#main .mainBanner ul li.bg_01 a{
+    background: url('../images/e-1/img01.jpg') no-repeat center / cover;
+}
+#main .mainBanner ul li.bg_02 a{
+    background: url('../images/e-1/img02.jpg') no-repeat center / cover;
+}
+#main .mainBanner ul li.bg_03 a{
+    background: url('../images/e-1/img03.jpg') no-repeat center / cover;
+}
+/* 컨텐츠 끝 */
+
+
+/* 푸터 시작 */
+#footer{
+    height: 120px;
+    display: flex;
+    background-color: #d67365;
+}
+#footer h3{}
+#footer h3 a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+}
+#footer h3 a img{
+    display: block;
+    filter: grayscale(100%);
+    
+}
+#footer div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+#footer .footerMenu{
+    display: flex;
+}
+#footer .footerMenu li{}
+#footer .footerMenu li a{
+    display: block;
+    transition: all .3s ease-in-out;
+}
+#footer .footerMenu li:hover a{
+    color: #fff;
+    text-decoration: underline;
+}
+#footer .footerMenu li a::after{
+    content: '';
+    display: inline-block;
+    height: 14px;
+    margin: 0 16px;
+    border-left: solid 1px #581a15;
+}
+#footer .footerMenu li:last-child a::after{
+    border: 0;
+}
+#footer p{
+    color: #333;
+}
+/* 푸터 끝 */
+
+
+/* 팝업 시작 */
+#modalPopup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 98;
+    display: none;
+}
+#modalPopup .popupBox{
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#modalPopup .popupBox h3 a{
+    display: block;
+    border-bottom: solid 1px #333;
+    text-align: center;
+}
+#modalPopup .popupBox p a{
+    display: block;
+}
+#modalPopup .closeBtn{
+    width: 100px;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: auto;
+    border: 0;
+    background-color: #f0b9af;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+#modalPopup .closeBtn:hover{
+    background-color: #c54f43;
+    color: #fff;
+}
+
+.show{
+    display: block !important;
+}
+/* 팝업 끝 */
