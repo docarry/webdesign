@@ -1,0 +1,515 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol,dl{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+body{
+    overflow-x: hidden;
+}
+
+#wrap{
+    display: flex;
+    height: 1000px;
+}
+
+/* 헤더 시작 */
+#header{
+    width: 200px;
+    background-color: #6495ed;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+#header h1 a img{
+    display: block;
+    width: 80%;
+}
+#header h1 a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+/* 네비 시작 */
+#header nav{
+    text-align: center;
+}
+#header .depth1 > li{
+    position: relative;
+}
+#header .depth1 > li > a{
+    display: block;
+    line-height: 50px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all .4s ease-in-out;
+}
+#header .depth1 > li:hover > a{
+    background-color: #fff;
+    color: #6495ed;
+    text-indent: 16px;
+}
+#header .depth1 > li:hover .depth2{
+    opacity: 1;
+    visibility: visible;
+}
+#header .depth2{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    transition: .4s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+#header .depth2 li a,
+#header .depth3 li a{
+    display: block;
+    line-height: 50px;
+    color: #fff;
+    background-color: #3f84ff;
+    transition: all .4s ease-in-out;
+}
+#header .depth2 li:hover a,
+#header .depth3 li:hover a{
+    background-color: #fff;
+    color: #6495ed;
+    text-decoration: underline;
+}
+#header .depth3{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: calc(100vw - 200px);
+    display: flex;
+    background-color: #3f84ff;
+    transition: all .4s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+#header .depth3 li{
+    width: 150px;
+}
+#header .depth1:hover .depth3{
+    opacity: 1;
+    visibility: visible;
+}
+/* 네비 종료 */
+
+/* 유틸 시작 */
+#header .util{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#header .util li a{
+    display: block;
+    color: #0000ff;
+    font-size: 18px;
+    font-weight: bold;
+    transition: .4s ease-in-out;
+}
+#header .util li a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+#header .util li span{
+    display: block;
+    width: 1px;
+    height: 12px;
+    background-color: #0000ff;
+}
+/* 유틸 종료 */
+/* 헤더 종료 */
+
+/* 메인시작 */
+#main{
+    display: flex;
+    width: 100%;
+}
+#main .content{
+    width: 400px;
+    background-color: #d3e3ff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+}
+
+/* 중간 배너 시작 */
+#main .content .middle-banner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 2;
+}
+#main .content .middle-banner div{
+    width: calc(100% / 3);
+}
+#main .content .middle-banner-img a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+#main .content .middle-banner-img a img{
+    display: block;
+    width: 60%;
+    transform: scale(.8);
+    transition: all .4s ease-in-out;
+}
+#main .content .middle-banner-img a img:hover{
+    transform: scale(1);
+}
+#main .content .middle-banner h3{
+    font-weight: bold;
+}
+#main .content .middle-banner .text a{
+    transition: all .4s ease-in-out;
+}
+#main .content .middle-banner .text a:hover,
+#main .content .middle-banner .arrow:hover a{
+    color: #6495ed;
+    border-color: #6495ed;
+}
+#main .content .middle-banner .arrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main .content .middle-banner .arrow a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid #333;
+    border-right: 2px solid #333;
+    transform: rotate(45deg);
+    transition: all .4s ease-in-out;
+}
+
+
+#main .content .notice,
+#main .content .gallery{
+    flex: 4;
+    text-align: center;
+    height: 100%;
+}
+#main .content article ul{
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+#main .content article ul li{
+    width: 50%;
+}
+#main .content article ul li input{
+    display: none;
+}
+#main .content article ul li label{
+    display: block;
+    line-height: 50px;
+    background-color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d3e3ff;
+}
+#main .content .notice dl{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+#main .content .notice dl{
+    transition: all .4s ease-in-out;
+}
+#main .content .notice dl:hover{
+    background-color: #fff;
+}
+#main .content .notice dl:hover a{
+    color: #6495ed;
+}
+#main .content article ul li input:checked ~ .tab-box{
+    z-index: 9;
+}
+#main .content article ul li input:checked + label{
+    background-color: #6495ed;
+    color: #fff;
+}
+#main .content article .tab-box{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #6495ed;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#main .content .gallery .tab-box ul{
+    gap: 10px;
+}
+#main .content .gallery .tab-box ul li{
+    width: calc(100% / 3);
+    background-color: #fff;
+}
+#main .content .gallery .tab-box ul li a{
+    display: block;
+    transition: all .4s ease-in-out;
+}
+#main .content .gallery .tab-box ul li img{
+    display: block;
+    width: 100%;
+    opacity: 1;
+    transition: all .4s ease-in-out;
+}
+#main .content .gallery .tab-box ul li:hover img{
+    opacity: .6;
+}
+#main .content .gallery .tab-box ul li:hover a{
+    color: #6495ed;
+    font-weight: bold;
+}
+
+/* 슬라이드 */
+#main .main-banner{
+    width: calc(100% - 400px);
+    height: 100%;
+}
+#main .main-banner .banner-box{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#main .main-banner .banner-box .slide{
+    width: 100%;
+    height: 100%;
+}
+#main .main-banner .banner-box .slide li{
+    width: 100%;
+    height: 100%;
+}
+#main .main-banner .banner-box .slide li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#main .main-banner .banner-box .bg1 a{
+    background: url('../images/slide1.jpg') no-repeat center / cover;
+}
+#main .main-banner .banner-box .bg2 a{
+    background: url('../images/slide2.jpg') no-repeat center / cover;
+}
+#main .main-banner .banner-box .bg3 a{
+    background: url('../images/slide3.jpg') no-repeat center / cover;
+}
+
+#main .banner-box .link{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    background-color: #3f84ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#main .banner-box .link li a{
+    display: block;
+}
+#main .banner-box .link li a img{
+    display: block;
+    transform: scale(.8);
+    transition: all .4s ease-in-out;
+}
+#main .banner-box .link li:hover a img{
+    transform: scale(1);
+}
+/* 메인종료 */
+
+/* 푸터 시작 */
+#footer{
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bfcce2;
+}
+#footer h2 a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100%;
+}
+#footer h2 a img{
+    display: block;
+    width: 80%;
+    filter: grayscale(100%);
+}
+#footer .footer-content{
+    display: flex;
+    gap: 20px;
+}
+#footer .footer-content .sns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+#footer .footer-content .sns li a{
+    display: block;
+    width: 50px;
+}
+#footer .footer-content .sns li a img{
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+    transform: scale(.8);
+    transition: all .4s ease-in-out;
+}
+#footer .footer-content .sns li:hover a img{
+    transform: scale(1);
+}
+#footer .footer-content .family{
+    width: 150px;
+    text-align: center;
+    position: relative;
+}
+#footer .footer-content .family input{
+    display: none;
+}
+#footer .footer-content .family label{
+    display: block;
+    line-height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3f84ff;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+#footer .footer-content .family label:hover,
+#footer .footer-content .family .family-list li:hover a{
+    background-color: #fff;
+    color: #3f84ff;
+}
+#footer .footer-content .family .family-list{
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: all .4s ease-in-out;
+}
+#footer .footer-content .family .family-list li a{
+    display: block;
+    color: #fff;
+    background-color: #3f84ff;
+    line-height: 50px;
+    transition: all .4s ease-in-out;
+}
+#footer .footer-content .family input:checked ~ .family-list{
+    height: 150px;
+}
+
+#modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 9999;
+    display: none;
+}
+#modal .popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+#modal .popup button{
+    display: block;
+    width: 100px;
+    line-height: 30px;
+    background-color: #3f84ff;
+    color: #fff;
+    border: 0;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+#modal .popup button:hover{
+    background-color: #d3e3ff;
+    color: #3f84ff;
+}
+#layer{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+#layer button{
+    display: block;
+    width: 100px;
+    line-height: 30px;
+    background-color: #3f84ff;
+    color: #fff;
+    border: 0;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+#layer button:hover{
+    background-color: #d3e3ff;
+    color: #3f84ff;
+}
+
+.show1{
+    display: flex !important;
+}
+.show2{
+    display: block !important;
+}
